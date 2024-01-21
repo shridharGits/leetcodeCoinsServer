@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require('express');
 const app = express();
+const cors = require('cors')
+app.use(cors())
 
 app.get('/api/users/leetcode-coins', async (req, res) => {
     const data = await fetch('https://leetcode.com/points/api/total/',
